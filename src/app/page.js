@@ -1,9 +1,11 @@
+import { Books } from "./components/Books";
 import { Navbar } from "./components/Navbar";
 
 export default function Home() {
   return (
     <div>
       <Navbar />
+      <Books />
 
       {/* color palette */}
       {/* <div className="w-8 h-8 bg-[#bfe5bf]"></div>
