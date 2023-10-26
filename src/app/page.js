@@ -1,7 +1,9 @@
+import { Navbar } from "./components/Navbar";
+
 export default function Home() {
   return (
     <div>
-      <h1>bookpedia</h1>
+      <Navbar />
 
       {/* color palette */}
       {/* <div className="w-8 h-8 bg-[#bfe5bf]"></div>
