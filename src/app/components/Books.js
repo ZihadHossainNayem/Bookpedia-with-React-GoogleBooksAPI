@@ -13,7 +13,7 @@ export const Books = () => {
       try {
         const response = await axios.get(
           /*   `https://www.googleapis.com/books/v1/volumes?key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=20&orderBy=relevance&q=programming` */
-          `https://www.googleapis.com/books/v1/volumes?key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=20&orderBy=relevance&q=science`
+          `https://www.googleapis.com/books/v1/volumes?key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=20&orderBy=relevance&q=finance`
         );
         setRecommendedBooks(response.data.items);
         console.log(response.data.items);

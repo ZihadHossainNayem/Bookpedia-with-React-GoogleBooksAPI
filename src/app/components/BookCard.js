@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import coverImg from "../assets/testCover.jpg";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { BookRating } from "./BookRating";
 
 export const BookCard = ({ book }) => {
   const { volumeInfo } = book;
@@ -10,7 +11,7 @@ export const BookCard = ({ book }) => {
     ? volumeInfo.authors.join(", ")
     : "Unknown Author";
   const CoverImage =
-    volumeInfo.imageLinks.thumbnail || "https://via.placeholder.com/150";
+    volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/150";
   const averageRating = volumeInfo.averageRating || "N/A";
   const ratingCount = volumeInfo.ratingsCount || "N/A";
   return (
@@ -38,12 +39,7 @@ export const BookCard = ({ book }) => {
         <p className="text-gray-500">
           by <span>{author}</span>
         </p>
-        <p className="flex gap-1 text-gray-800 items-center">
-          <AiFillStar />
-
-          <span>{averageRating}</span>
-          <span>({ratingCount})</span>
-        </p>
+        <BookRating averageRating={averageRating} ratingCount={ratingCount} />
         <span className="text-gray-800">
           {volumeInfo.publishedDate
             ? volumeInfo.publishedDate.split("-")[0]
