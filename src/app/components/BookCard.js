@@ -17,7 +17,7 @@ export const BookCard = ({ book }) => {
   return (
     <div
       className=" p-2 m-3 max-w-[400px] h-[280px] flex rounded-lg gap-3
-     bg-slate-50 shadow hover:transform hover:scale-105 
+      shadow hover:transform hover:scale-105 
      transition-transform duration-300"
     >
       {/* cover image */}
