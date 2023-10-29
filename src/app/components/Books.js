@@ -36,7 +36,7 @@ export const Books = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=subject:${selectedCategory}&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=30`
+          `https://www.googleapis.com/books/v1/volumes?q=subject:${selectedCategory}&orderBy=relevance&printType=all&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=30`
         );
         // Handle sorting based on release date
         /*  const filteredBooks = response.data.items.sort((a, b) => {
