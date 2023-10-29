@@ -45,7 +45,9 @@ const Details = () => {
   const ratingCount = bookInfo?.volumeInfo?.ratingsCount || "N/A";
   const publishedDate = bookInfo?.volumeInfo?.publishedDate || "N/A";
   const publisher = bookInfo?.volumeInfo?.publisher || "N/A";
-  const bookImage = bookInfo?.volumeInfo?.imageLinks?.thumbnail || "N/A";
+  const bookImage =
+    bookInfo?.volumeInfo?.imageLinks?.thumbnail ||
+    "https://via.placeholder.com/150";
   const description = bookInfo?.volumeInfo?.description || "N/A";
   const descriptionWithoutTags = stripTagsFromDesc(description);
 
@@ -58,6 +60,7 @@ const Details = () => {
   const categories = bookInfo?.volumeInfo?.categories || "N/A";
   const language = bookInfo?.volumeInfo?.language || "N/A";
   const pageCount = bookInfo?.volumeInfo?.pageCount || "N/A";
+
   return (
     <>
       <Navbar />
@@ -96,16 +99,19 @@ const Details = () => {
                   </span>
                 )}
               </div>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {categories.map((category, index) => (
-                  <div
-                    key={index}
-                    className="px-2 py-1 bg-slate-200 text-gray-800 rounded"
-                  >
-                    {category}
-                  </div>
-                ))}
+              <div className="flex flex-wrap gap-2 mt-2 text-sm">
+                {categories && Array.isArray(categories)
+                  ? categories.map((category, index) => (
+                      <div
+                        key={index}
+                        className="px-2 py-1 bg-slate-200 text-gray-800 rounded"
+                      >
+                        {category}
+                      </div>
+                    ))
+                  : null}
               </div>
+
               <h1 className="text-gray-700 text-xl font-medium mt-6">
                 Book Details
               </h1>
@@ -116,7 +122,7 @@ const Details = () => {
                 </p>
                 <p>Language: {language}</p>
                 <p>Total Pages: {pageCount}</p>
-                <p>Google ID: {googleID}</p>
+                <p>Google Book ID: {googleID}</p>
               </div>
             </div>
           </div>

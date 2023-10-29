@@ -13,14 +13,9 @@ export const Navbar = () => {
     <div className="md:px-12 px-4 md:py-6 py-4 border-b flex justify-between">
       {/* left */}
       <div className="flex items-center gap-2">
-        {/* menu */}
-        <button>
-          <BiMenu size={25} className="text-gray-700" />
-        </button>
-
         {/* logo text */}
-        <Link href="/">
-          <span className="font-semibold md:text-2xl text-gray-700">
+        <Link href={"/"}>
+          <span className="font-semibold md:text-2xl text-xl text-gray-700">
             Bookpedia
           </span>
         </Link>

@@ -22,10 +22,9 @@ export const Books = () => {
     "Mystery",
     "Philosophy",
     "Psychology",
-    "Religion",
     "Romance",
     "Science",
-    "Self-help",
+
     "Sports",
     "Technology",
     "Travel",
@@ -57,17 +56,15 @@ export const Books = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="md:px-12 px-4 md:py-6 py-4 flex bg-[#fafbfd]">
-      {/* left section */}
-      <div>
-        <div className="md:mr-8 mr-2">
-          <h2 className="text-gray-800 text-lg font-semibold mb-4">
-            Popular
-            <br />
-            Categories
-          </h2>
+    <div className="md:px-12 px-4 md:py-6 py-4 flex flex-col md:flex-row bg-[#fafbfd]">
+      {/* left section - category */}
+      <div className="md:mr-8 mr-0">
+        <h2 className="text-gray-800 text-lg font-semibold mb-4">
+          Popular Categories
+        </h2>
+        <div className="flex flex-wrap md:block gap-2 text-sm md:text-base">
           {categories.map((category, index) => (
-            <div key={index} className="flex items-center mb-4">
+            <div key={index} className="flex items-center mb-4 w-auto">
               <input
                 type="radio"
                 id={category}
@@ -82,11 +79,12 @@ export const Books = () => {
           ))}
         </div>
       </div>
+
       {/* right section */}
-      <div className="w-full md:ml-6 ml-2">
+      <div className="w-full md:ml-6 ml-0">
         {/* search */}
         <div className="flex items-center justify-center w-full mb-6">
-          <form className="w-[70%] relative">
+          <form className="w-full relative">
             <input
               type="text"
               placeholder="Search here..."
