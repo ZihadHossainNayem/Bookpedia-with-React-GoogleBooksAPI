@@ -5,6 +5,7 @@ import profilePic from "../assets/profileimg.jpg";
 import { BiMenu, BiBell, BiMessageAltMinus, BiLogOut } from "react-icons/bi";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,9 +19,11 @@ export const Navbar = () => {
         </button>
 
         {/* logo text */}
-        <span className="font-semibold md:text-2xl text-gray-700">
-          Bookpedia
-        </span>
+        <Link href="/">
+          <span className="font-semibold md:text-2xl text-gray-700">
+            Bookpedia
+          </span>
+        </Link>
       </div>
       {/* right */}
       <div className="flex items-center gap-4">

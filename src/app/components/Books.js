@@ -59,7 +59,7 @@ export const Books = () => {
   return (
     <div className="md:px-12 px-4 md:py-6 py-4 flex">
       {/* left section */}
-      <div className="">
+      <div>
         <div className="md:mr-8 mr-2">
           <h2 className="text-gray-800 text-lg font-semibold mb-4">
             Popular
