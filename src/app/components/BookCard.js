@@ -17,7 +17,7 @@ export const BookCard = ({ book }) => {
   return (
     <Link href={`/details/${book.id}`}>
       <div
-        className=" p-2 m-3 max-w-[400px] h-[280px] flex rounded-lg gap-3
+        className=" p-2 m-3 max-w-[400px] h-[280px] flex rounded-lg gap-3 bg-white
       shadow hover:transform hover:scale-105 transition-transform duration-300"
       >
         {/* cover image */}

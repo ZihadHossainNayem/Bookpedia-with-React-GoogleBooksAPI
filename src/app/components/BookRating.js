@@ -26,7 +26,7 @@ export const BookRating = ({ averageRating, ratingCount }) => {
     <div className="flex items-center gap-1">
       {renderStars()}
       {/* <span className="ml-1">{averageRating}</span> */}
-      <span className="mt-[3px] ml-2">({ratingCount})</span>
+      <span className="mt-[3px] ml-1">({ratingCount})</span>
     </div>
   );
 };

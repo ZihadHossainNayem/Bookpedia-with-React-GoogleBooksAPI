@@ -57,7 +57,7 @@ export const Books = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="md:px-12 px-4 md:py-6 py-4 flex">
+    <div className="md:px-12 px-4 md:py-6 py-4 flex bg-[#fafbfd]">
       {/* left section */}
       <div>
         <div className="md:mr-8 mr-2">
