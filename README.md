@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bookpedia with React & Google Books API
 
-## Getting Started
+**Demo:** [Bookpedia](https://bookpedia-nayem.netlify.app/)
 
-First, run the development server:
+![App Preview](https://github.com/ZihadHossainNayem/Bookpedia-with-React-GoogleBooksAPI/assets/30808845/cf882e97-1497-4972-a9c4-68d59e2281df)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Book Details](https://github.com/ZihadHossainNayem/Bookpedia-with-React-GoogleBooksAPI/assets/30808845/977fce4d-c377-4a9c-9dbd-0f3aa80f3aea)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Project Functionality
 
-## Learn More
+### 1. Book Recommendations:
+- Display recommended books based on selected categories.
+- Fetch books from the Google Books API.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Search Functionality:
+- Allow users to search for books by entering a search term.
+- Display search results from the Google Books API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Pagination:
+- Implement pagination for both recommended books and search results.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 4. Category Selection:
+- Provide a list of popular categories for users to choose from.
+- Fetch books based on the selected category.
 
-## Deploy on Vercel
+### 5. Responsive Design:
+- Ensure the application is responsive and works seamlessly on various devices and screen sizes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 6. Book Details:
+- Show detailed information about a selected book when clicked.
+- Include book cover, title, author, description, rating, publisher, published date, total pages etc.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 7. Error Handling:
+- Handle API errors gracefully, providing meaningful error messages to users.
+- Display a message when no search results are found.
+
+### 8. Scroll to Top:
+- Scroll to the top of the page when changing categories, search terms or when chaning page from pagination.
+
+
+
+## Technologies Used
+
+- **Frontend:**
+  - [React](https://reactjs.org/) - JavaScript library for building user interfaces.
+  - [Axios](https://axios-http.com/) - Promise-based HTTP client for making API requests.
+  - [React Icons](https://react-icons.github.io/react-icons/) - Icons library for React applications.
+  - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework for building responsive designs.
+
+- **API:**
+  - [Google Books API](https://developers.google.com/books) - API for accessing Google Books data.
+
+- **Image Handling:**
+  - [Next.js Image](https://nextjs.org/docs/api-reference/next/image) - Optimized image component for Next.js applications.
+
+- **Development Tools:**
+  - [Visual Studio Code](https://code.visualstudio.com/) - Code editor with great support for JavaScript and React development.
+  - [Git](https://git-scm.com/) - Version control system for tracking changes in the project.
+  - [GitHub](https://github.com/) - Web-based hosting service for version control using Git.
+
+- **Package Management:**
+  - [npm](https://www.npmjs.com/) - Package manager for Node.js, used for installing and managing project dependencies.
+
+- **Deployment:**
+  - [Netlify](https://www.netlify.com/) - Platform for hosting and deploying web applications.
+
+- **Other Tools:**
+  - [Postman](https://www.postman.com/) - API development and testing tool for API requests.
+
+- **Languages:**
+  - **JavaScript**: Main programming language used for the frontend development.
+
