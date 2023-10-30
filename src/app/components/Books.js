@@ -102,7 +102,7 @@ export const Books = () => {
   const endIndex = startIndex + booksPerPage;
 
   return (
-    <div className="md:px-12 px-4 md:py-6 py-4 flex flex-col md:flex-row bg-[#fafbfd]">
+    <div className="lg:px-24 md:px-12  px-4 md:py-6 py-4 flex flex-col md:flex-row bg-[#fafbfd]">
       {/* left section - category */}
       <div className="md:mr-8 mr-0">
         <h2 className="text-gray-800 text-lg font-semibold mb-4">

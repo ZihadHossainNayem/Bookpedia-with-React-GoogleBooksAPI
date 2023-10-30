@@ -10,7 +10,7 @@ import Link from "next/link";
 export const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
-    <div className="md:px-12 px-4 md:py-6 py-4 border-b flex justify-between">
+    <div className="lg:px-24 md:px-12 px-4 md:py-6 py-4 border-b flex justify-between">
       {/* left */}
       <div className="flex items-center gap-2">
         {/* logo text */}

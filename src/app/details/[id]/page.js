@@ -65,11 +65,11 @@ const Details = () => {
   return (
     <>
       <Navbar />
-      <main className="md:px-12 px-4 md:py-6 py-4 bg-[#fafbfd] h-screen">
+      <main className="md:px-12 lg:px-24 px-4 md:py-6 py-4 bg-[#fafbfd] h-screen">
         {bookInfo && (
           <div className="grid md:grid-cols-2 md:gap-0 gap-6">
             {/* left - thumbnail image */}
-            <div className="pt-2">
+            <div className="pt-2 mx-auto">
               <Image
                 src={bookImage}
                 alt="book cover"
@@ -80,7 +80,7 @@ const Details = () => {
               />
             </div>
             {/* right - information */}
-            <div className="pt-1">
+            <div className="pt-1 pl-4">
               <p className="text-2xl font-semibold text-gray-800">{title}</p>
               <p className="text-gray-500 mt-4">by {author}</p>
               <div className="text-gray-600">
