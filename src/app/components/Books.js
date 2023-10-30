@@ -1,12 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import axios from "axios";
 import { BookCard } from "./BookCard";
 
 export const Books = () => {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("Science");
+  const [selectedCategory, setSelectedCategory] = useState("Art");
+  const totalBooks = 40;
+
+  /* for pagination */
+  const booksPerPage = 12;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const categories = [
     "Art",
@@ -24,7 +30,6 @@ export const Books = () => {
     "Psychology",
     "Romance",
     "Science",
-
     "Sports",
     "Technology",
     "Travel",
@@ -35,17 +40,8 @@ export const Books = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=subject:${selectedCategory}&orderBy=relevance&printType=all&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=30`
+          `https://www.googleapis.com/books/v1/volumes?q=subject:${selectedCategory}&orderBy=relevance&printType=all&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&maxResults=${totalBooks}`
         );
-        // Handle sorting based on release date
-        /*  const filteredBooks = response.data.items.sort((a, b) => {
-          // Sort by release date (newest first)
-          const dateA = new Date(b.volumeInfo.publishedDate || "1970-01-01");
-          const dateB = new Date(a.volumeInfo.publishedDate || "1970-01-01");
-          return dateA - dateB;
-        });
-
-        setRecommendedBooks(filteredBooks); */
         setRecommendedBooks(response.data.items);
         console.log(response.data.items);
       } catch (error) {
@@ -54,6 +50,26 @@ export const Books = () => {
     };
     fetchData();
   }, [selectedCategory]);
+
+  /* total pages needed for pagination */
+  const totalPages = Math.ceil(totalBooks / booksPerPage);
+
+  /* pagination handler */
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo(0, 0);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const startIndex = (currentPage - 1) * booksPerPage;
+  const endIndex = startIndex + booksPerPage;
 
   return (
     <div className="md:px-12 px-4 md:py-6 py-4 flex flex-col md:flex-row bg-[#fafbfd]">
@@ -99,11 +115,31 @@ export const Books = () => {
         <div className="mt-6">
           <div className="flex items-center justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 md1:grid-cols-3 md2:grid-cols-4">
-              {recommendedBooks.map((book, index) => (
-                <BookCard key={index} book={book} />
-              ))}
+              {recommendedBooks
+                .slice(startIndex, endIndex)
+                .map((book, index) => (
+                  <BookCard key={index} book={book} />
+                ))}
             </div>
           </div>
+        </div>
+        {/* pagination buttons*/}
+        <div className="flex items-center justify-center mt-4">
+          <button
+            onClick={handlePrevPage}
+            className="mr-4"
+            disabled={currentPage === 1}
+          >
+            <GrFormPrevious className="text-3xl hover:bg-gray-200 rounded-lg" />
+          </button>
+          <span>{`page ${currentPage} of ${totalPages}`}</span>
+          <button
+            onClick={handleNextPage}
+            className="ml-4"
+            disabled={currentPage === totalPages}
+          >
+            <GrFormNext className="text-3xl hover:bg-gray-200 rounded-lg" />
+          </button>
         </div>
         {/* results */}
         <div></div>

@@ -36,7 +36,7 @@ export const BookCard = ({ book }) => {
           <h1 className="md:text-2xl text-xl text-gray-800 font-semibold line-clamp-3">
             {title}
           </h1>
-          <p className="text-gray-500">
+          <p className="text-gray-500 line-clamp-2">
             by <span>{author}</span>
           </p>
           <BookRating averageRating={averageRating} ratingCount={ratingCount} />

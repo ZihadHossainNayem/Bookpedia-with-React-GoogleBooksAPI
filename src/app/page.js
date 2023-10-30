@@ -1,4 +1,3 @@
-"use client";
 import { Books } from "./components/Books";
 import { Navbar } from "./components/Navbar";
 
