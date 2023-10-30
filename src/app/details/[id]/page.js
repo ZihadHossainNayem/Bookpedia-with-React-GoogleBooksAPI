@@ -60,6 +60,7 @@ const Details = () => {
   const categories = bookInfo?.volumeInfo?.categories || "N/A";
   const language = bookInfo?.volumeInfo?.language || "N/A";
   const pageCount = bookInfo?.volumeInfo?.pageCount || "N/A";
+  const printType = bookInfo?.volumeInfo?.printType || "N/A";
 
   return (
     <>
@@ -122,6 +123,7 @@ const Details = () => {
                 </p>
                 <p>Language: {language}</p>
                 <p>Total Pages: {pageCount}</p>
+                <p>Print Type: {printType}</p>
                 <p>Google Book ID: {googleID}</p>
               </div>
             </div>

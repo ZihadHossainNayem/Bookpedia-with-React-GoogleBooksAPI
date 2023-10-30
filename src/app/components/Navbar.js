@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import profilePic from "../assets/profileimg.jpg";
-import { BiMenu, BiBell, BiMessageAltMinus, BiLogOut } from "react-icons/bi";
+import { BiBook, BiBell, BiMessageAltMinus, BiLogOut } from "react-icons/bi";
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineSetting } from "react-icons/ai";
 import Link from "next/link";
@@ -15,8 +15,8 @@ export const Navbar = () => {
       <div className="flex items-center gap-2">
         {/* logo text */}
         <Link href={"/"}>
-          <span className="font-semibold md:text-2xl text-xl text-gray-700">
-            Bookpedia
+          <span className="font-semibold md:text-2xl text-xl text-gray-700 flex items-center gap-2">
+            <BiBook /> Bookpedia
           </span>
         </Link>
       </div>

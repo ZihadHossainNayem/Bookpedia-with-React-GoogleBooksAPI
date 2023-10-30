@@ -15,10 +15,10 @@ export const BookCard = ({ book }) => {
   const ratingCount = volumeInfo.ratingsCount || "N/A";
 
   return (
-    <Link href={`/details/${book.id}`}>
+    <Link href={`/details/${book.id}`} target="_blank">
       <div
         className="p-2 m-2 max-w-[400px] md:max-h-[280px] flex rounded-lg gap-3 bg-white
-      shadow hover:transform hover:scale-105 transition-transform duration-300"
+      shadow hover:transform hover:scale-105 transition-transform duration-300 border border-slate-300"
       >
         {/* cover image */}
         <div className="flex items-center px-1 ">
